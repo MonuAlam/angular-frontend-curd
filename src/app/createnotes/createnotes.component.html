@@ -1,0 +1,17 @@
+<div class="container">
+    <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+    <h2>Add Note</h2>
+    <form (submit)="handleSubmit()">
+      <div class="form-group">
+        <label>Title:</label>
+        <input type="text" name="name" [(ngModel)]="formData.title" required />
+      </div>
+      <div class="form-group">
+        <label>Description:</label>
+        <input type="Description" name="email" [(ngModel)]="formData.description" required />
+      </div>
+     
+      <button type="submit">Add</button>
+    </form>
+  </div>
+  

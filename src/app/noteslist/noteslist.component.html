@@ -1,0 +1,30 @@
+<div class="container">
+    <h2>Notes Page</h2>
+    <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+    <button routerLink="/createnotes" class="reg-button">Add Note</button>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Added Date</th>
+                <th>Updated Date </th>
+                <th>Action </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let note of notes" key="user.id">
+                <td>{{ note.id }}</td>
+                <td>{{ note.title }}</td>
+                <td>{{ note.description }}</td>
+                <td>{{ note.addedDate }}</td>
+                <td>{{ note.updatedDate  }}</td>
+                <td>
+                    <button class="delete-button" (click)="deleteNotes(note.id)">Delete</button>
+                    <button class="update-button" (click)="navigateToUpdate(note.id)">Update</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

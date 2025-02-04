@@ -1,0 +1,15 @@
+<div class="container">
+    <p *ngIf="errorMessage" class="error-message">{{errorMessage}}</p>
+    <h2>Update Note</h2>
+    <form (ngSubmit)="updateNotes()">
+        <div class="form-group">
+                <label for="">Title: </label>
+                <input type="text" name="name" [(ngModel)]="noteData.title">
+        </div>
+        <div class="form-group">
+                <label for="">Description: </label>
+                <input type="text" name="emaik" [(ngModel)]="noteData.description">
+        </div>
+        <button type="submit">Update</button>
+    </form>
+</div>
